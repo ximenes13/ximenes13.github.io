@@ -143,12 +143,15 @@ header {
 }
 
 .section__pic-container img {
-  width: 260px;
-  height: 260px;
+  width: 100%;
+  max-width: 260px;     /* nunca passa de 260px de largura */
+  height: auto;         /* mantém proporção natural */
+  aspect-ratio: 1/1;    /* mantém formato quadrado se quiseres */
   border-radius: 26px;
-  object-fit: cover;
+  object-fit: cover;    /* corta se necessário, mas sem esticar */
   border: 1px solid rgba(255, 255, 255, 0.16);
 }
+
 
 /* TEXT HERO */
 .section__text {

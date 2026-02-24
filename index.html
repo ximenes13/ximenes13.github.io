@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfólio de Ana Ximenes Gaspar - Data Testing Engineer" />
+  <meta name="description" content="Portfólio de Ana Ximenes Gaspar - QA Consultant" />
   <title>Ana Ximenes Gaspar | Portfólio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -49,7 +49,7 @@
           <div class="section__text">
             <p class="tagline">Hello, I'm</p>
             <h1 class="title">Ana Ximenes Gaspar</h1>
-            <p class="subtitle">Data Testing Engineer</p>
+            <p class="subtitle">Quality Assurance Consultant</p>
             <div class="btn-container">
               <a href="./assets/AnaGaspar_EN.pdf" class="btn btn-primary" download>Download CV</a>
               <a href="contact" data-link class="btn btn-secondary">Contact</a>
@@ -67,44 +67,92 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
+      <!-- ABOUT -->
     <section id="about" class="fade-in">
       <h2 class="section-title">About Me</h2>
+
+      <!-- LINHA DE CIMA: FOTO + 2 CARDS -->
       <div class="section-container">
+        <!-- FOTO -->
         <div class="section__pic-container about-pic-wrapper">
           <img src="./assets/about-pic.png" alt="Profile picture" class="about-pic" />
         </div>
+
+        <!-- CARDS -->
         <div class="about-details-container">
           <div class="about-containers">
             <div class="details-container">
-              <img src="./assets/experience.png" alt="Experience icon" class="icon" />
+              <img src="./assets/experience.png" alt="Experience" class="icon" />
               <h3>Experience</h3>
-              <p>2+ years as Communications Engineer and Data Testing Engineer</p>
+              <span class="tag">4+ Years</span>
+              <ul>
+                <li>International railway projects (PT, BR, MX)</li>
+                <li>CBTC software validation specialist</li>
+                <li>Automated testing & signaling infrastructure</li>
+              </ul>
             </div>
             <div class="details-container">
-              <img src="./assets/education.png" alt="Education icon" class="icon" />
+              <img src="./assets/education.png" alt="Education" class="icon" />
               <h3>Education</h3>
-              <p>B.Sc. + M.Sc.</p>
+              <span class="tag">M.Sc. + B.Sc.</span>
+              <ul>
+                <li>Telecommunications Engineering (IST)</li>
+                <li>Computer Science & Networks (ISEL)</li>
+                <li>Telecom Security specialist</li>
+              </ul>
             </div>
           </div>
-          <p class="about-text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, doloribus...
-          </p>
         </div>
+      </div>
+
+      <!-- LINHA DE BAIXO: TEXTO “ABOUT ME” -->
+      <div class="bio-container">
+        <ul>
+          <li>I focus on building robust, efficient solutions and improving processes through analytical thinking and attention to detail.</li>
+          <li>I thrive in complex environments where quality, performance, and continuous improvement matter.</li>
+          <li>With a strong problem-solving mindset and a drive for optimization, I aim to create impact through clarity, structure, and smarter execution.</li>
+        </ul>
       </div>
     </section>
 
     <!-- EXPERIENCE -->
     <section id="experience" class="fade-in">
       <h2 class="section-title">Experience</h2>
-      <div class="experience-details-container">
-        <div class="details-container">
-          <h3>Communications on Railway</h3>
-          <p>Projects: Metro de Lisboa, Infraestruturas de Portugal, Mexico Line</p>
+      <div class="section-container">
+        <div class="section__pic-container about-pic-wrapper">
+          <img src="./assets/about-pic.png" alt="Ana Ximenes Gaspar" class="about-pic" />
         </div>
-        <div class="details-container">
-          <h3>Data Testing on Railway</h3>
-          <p>Projects: Infraestruturas de Portugal, Mexico Line, Brasil (CCR, CPTM)</p>
+        <div class="experience-details-container">
+          <div class="experience-cards">
+            <!-- System Engineer -->
+            <div class="details-container">
+              <div class="job-header">
+                <h3>Siemens Mobility - Portugal</h3>
+                <span class="job-date">06/2021 - 06/2023</span>
+              </div>
+              <p><strong>System Engineer</strong></p>
+              <ul>
+                <li>Network plan design (equipment; IP).</li>
+                <li>Configuration and troubleshooting in the field.</li>
+                <li>Documentation for the Network Plan.</li>
+              </ul>
+            </div>
+
+            <!-- Data Tester -->
+            <div class="details-container">
+              <div class="job-header">
+                <h3>Siemens Mobility - Portugal</h3>
+                <span class="job-date">08/2023 - 04/2025</span>
+              </div>
+              <p><strong>Data Tester</strong></p>
+              <ul>
+                <li>Software validation and testing in railway infrastructure.</li>
+                <li>La Bagosta projects (Line 6) validation (monorail).</li>
+                <li>Line 8-MK1, West-MK1, Line 11-Coral electrification.</li>
+                <li>CBTC system FAT analysis and debugging.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -113,7 +161,6 @@
     <section id="projects" class="fade-in">
       <h2 class="section-title">Projects</h2>
       <div class="project-grid" id="projects-grid">
-        <!-- cards serão preenchidos via JS se quiseres usar o projects.json -->
         <div class="project-card">
           <img src="./assets/project-1.png" alt="Project 1" class="project-img" />
           <h3>Project One</h3>
@@ -149,7 +196,6 @@
         <p>LinkedIn: <a href="https://www.linkedin.com/in/ana-ximenes-gaspar/" target="_blank">LinkedIn</a></p>
       </div>
     </section>
-
   </main>
 
   <footer>

@@ -1,70 +1,58 @@
-// Router SPA Vanilla JS
-const app = document.getElementById("app");
-
+// Router SPA FINAL - scroll automático incluído
 function navigateTo(url) {
-  history.pushState(null, null, url);
+  if (!url.startsWith('/')) url = '/' + url;
+  window.location.hash = url;
   router();
 }
 
 function router() {
   const routes = {
     "/": "profile",
+    "/profile": "profile",
     "/about": "about",
     "/experience": "experience",
     "/projects": "projects",
     "/contact": "contact"
   };
 
-  const path = window.location.pathname;
+  let path = window.location.hash.slice(1) || window.location.pathname;
   const sectionId = routes[path] || "profile";
 
+  // Esconde todas
   document.querySelectorAll("main section").forEach(section => {
     section.style.display = "none";
+    section.classList.remove("visible");
   });
 
+  // Mostra ativa
   const activeSection = document.getElementById(sectionId);
   if (activeSection) {
     activeSection.style.display = "block";
-    activeSection.classList.add("visible"); // fade-in
+    // Scroll suave + fade-in automático
+    setTimeout(() => {
+      activeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => activeSection.classList.add("visible"), 200);
+    }, 10);
   }
 }
 
-// Intercepta cliques SPA
+// Cliques, hamburger, etc... (igual)
 document.addEventListener("click", e => {
   const link = e.target.closest("a[data-link]");
   if (!link) return;
-
   e.preventDefault();
   navigateTo(link.getAttribute("href"));
 });
 
-// Back / forward do browser
-window.addEventListener("popstate", router);
+window.addEventListener("hashchange", router);
 
-// Inicialização
-document.addEventListener("DOMContentLoaded", () => {
-  router();
-});
-
-// Menu hambúrguer
 const hamburger = document.getElementById('hamburger');
 const menuLinks = document.getElementById('menu-links');
+if (hamburger && menuLinks) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    menuLinks.style.display = menuLinks.style.display === 'flex' ? 'none' : 'flex';
+  });
+}
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  const isOpen = menuLinks.style.display === 'flex';
-  menuLinks.style.display = isOpen ? 'none' : 'flex';
-});
-
-// Scroll fade-in (para seções visíveis)
-const fadeIn = () => {
-  const activeSection = document.querySelector("main section:not([style*='display: none'])");
-  if (!activeSection) return;
-
-  const top = activeSection.getBoundingClientRect().top;
-  if (top < window.innerHeight - 100) {
-    activeSection.classList.add("visible");
-  }
-};
-window.addEventListener('scroll', fadeIn);
-window.addEventListener('load', fadeIn);
+document.addEventListener("DOMContentLoaded", router);

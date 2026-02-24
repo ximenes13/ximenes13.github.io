@@ -6,6 +6,23 @@
   box-sizing: border-box;
 }
 
+p {
+  margin-bottom: 1rem;  /* 16px de espaço em baixo; ajuste para 1.5rem se quiser mais */
+}
+
+.about-containers {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .about-containers {
+    flex-direction: column;
+  }
+}
+
+
 /* BACKGROUND FUTURISTA */
 body {
   font-family: 'Poppins', sans-serif;
@@ -424,4 +441,198 @@ footer {
 @media (max-width: 768px) {
   .project-grid { flex-direction: column; gap: 2rem; }
   .btn-container { justify-content: center; }
+}
+
+.experience-cards {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .experience-cards {
+    flex-direction: column;
+  }
+}
+
+.experience-details-container {
+  padding: 0;
+}
+
+.details-container {
+  flex: 1;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.job-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #f9fafb;
+}
+
+.job-date {
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.details-container p {
+  color: #a1a1aa;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+#experience ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#experience li {
+  padding: 0.6rem 0;
+  padding-left: 1.2rem;
+  position: relative;
+  color: #d1d5db;
+  font-size: 0.9rem;
+}
+
+#experience li::before {
+  content: "▸";
+  color: #6366f1;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.about-containers {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.about-details-container {
+  padding: 0;
+}
+
+.details-container {
+  flex: 1;
+  padding: 1.5rem;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.details-container h3 {
+  font-size: 1.1rem;
+  color: #f9fafb;
+  margin-bottom: 0.5rem;
+}
+
+.details-container p {
+  color: #d1d5db;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+  .about-containers {
+    flex-direction: column;
+  }
+}
+
+/* BULLETS AZUIS para ABOUT */
+.about-containers .details-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.about-containers .details-container li {
+  padding: 0.6rem 0;
+  padding-left: 1.2rem;
+  position: relative;
+  color: #d1d5db;
+  font-size: 0.88rem;
+}
+
+.about-containers .details-container li::before {
+  content: "▸";
+  color: #6366f1;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* TAGS GRADIENTE COLORIDAS para About */
+.about-containers .details-container .tag {
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* Bio em baixo, centrado e com glass */
+.bio-container {
+  max-width: 900px;
+  margin: 3rem auto 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.5rem 3rem;
+  text-align: center;
+}
+
+.about-text {
+  margin-bottom: 1.4rem;
+  color: #d1d5db;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+/* =====================================================
+   ABOUT - força bullets azuis iguais ao Experience
+   (não altera mais nada)
+===================================================== */
+
+.bio-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bio-container li {
+  position: relative;
+  padding-left: 1.3rem;
+}
+
+.bio-container li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #6366f1;
+  font-weight: bold;
 }
